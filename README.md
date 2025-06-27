@@ -36,3 +36,77 @@ A data engineering + MLOps portfolio project using real-world environmental indi
 
 ## Folder Structure
 
+enviro/
+├── slim_loader.py # script to create tables and load CSVs
+├── slim_enviro.db # generated SQLite DB file
+└── data/
+└── slim/ # cleaned source CSVs
+
+
+---
+
+## Dataset Overview
+
+| Table Name                                      | Description                                                                 |
+|------------------------------------------------|-----------------------------------------------------------------------------|
+| `update_temperature`                           | Primary table: year, country, climate metrics, energy & extreme weather     |
+| `unified_emissions`                            | CO₂ and GHG emissions per country                                           |
+| `forests_forest_area`                          | Forest coverage & land use metrics                                          |
+| `waste_hazardous_generated`                    | Hazardous waste generated per country and year                              |
+| `biodiversity_terrestrial_marine_protected_areas` | Protected area coverage (land/marine)                                      |
+
+All tables are linked through foreign key relationships to ensure referential integrity and queryability.
+
+---
+
+## Machine Learning Models
+
+Target variable: **Extreme Weather Events**  
+Features include:  
+- CO₂ emissions (tons per capita)  
+- Sea level rise  
+- Forest area %  
+- Renewable energy %  
+- Rainfall  
+- Population  
+- Average temperature  
+
+### Model Results
+
+| Model           | MSE   | R²    |
+|-----------------|--------|--------|
+| Linear Regression | 31.45 | 0.715 |
+| Random Forest     | 15.65 | 0.858 |
+| XGBoost           | 16.23 | 0.853 |
+
+---
+
+## Analysis Opportunities
+
+These results suggest promising predictive power from environmental and socio-economic indicators:
+
+### Forest Coverage and Climate Impact
+- Investigate whether countries with declining forest areas have increased extreme weather events.
+- Add lag features to capture delayed effects from land use changes.
+
+### Sea Level Rise + Rainfall
+- Perform time-series clustering on rainfall + sea level to isolate high-risk regions.
+- Investigate regional differences (e.g., island nations vs inland countries).
+
+### Renewable Energy % vs. Events
+- Explore thresholds for "protection effect" — e.g., do countries with >30% renewable energy see fewer events?
+- Use SHAP values to analyze feature importance more deeply per model.
+
+---
+
+## Visualizations
+
+---
+
+## How to Reproduce
+
+Clone this repo:
+   ```bash
+   git clone https://github.com/loroldoesmath/enviro
+   cd enviro
+Explore
