@@ -1,4 +1,4 @@
-# 🌎 EnviroLens
+# Environmental Analysis 
 
 A data engineering + MLOps portfolio project using real-world environmental indicators from multiple sources.
 
