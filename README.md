@@ -37,10 +37,15 @@ A data engineering + MLOps portfolio project using real-world environmental indi
 ## Folder Structure
 
 enviro/
+
 ├── slim_loader.py # script to create tables and load CSVs
+
 ├── slim_enviro.db # generated SQLite DB file
+
 └── data/
+
 └── slim/ # cleaned source CSVs
+
 
 
 ---
